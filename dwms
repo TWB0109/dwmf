@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+
+setxkbmap -layout us
+setxkbmap -option caps:swapescape
+nitrogen --restore
+#hsetroot -solid \#D3869B
+xrdb ~/.Xresources
+#$HOME/.scripts/natscroll
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+[[ -z $(pgrep dbar) ]] && dbar &
+[[ -z $(pgrep picom) ]] && picom --experimental-backends &
+[[ -z $(pgrep sxhkd) ]] && sxhkd &
+[[ -z $(pgrep xsettingsd) ]] && xsettingsd -c ~/.config/xsettingsd/xsettingsd-dwm.conf &
+[[ -z $(pgrep xfce4-power-manager) ]] && xfce4-power-manager --daemon &
+[[ -z $(pgrep dunst) ]] && dunst &
+[[ -z $(pgrep xidlehook) ]] && xidlehook --not-when-fullscreen --not-when-audio --timer 600 'slock' '' &
+[[ -z $(pgrep emacs) ]] && emacs --daemon &
+[[ -z $(pgrep mpd) ]] && mpd &
+#spotifyd
+
+# Start gnome-keyring for ssh keys
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
+# Start dbus-session
+if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
+    eval 'dbus-launch --sh-syntax --exit-with-session'
+fi
+
+while true; do
+    dwm 2> ~/.dwm.log
+done

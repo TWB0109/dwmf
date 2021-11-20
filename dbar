@@ -1,0 +1,48 @@
+#!/bin/bash
+
+mpd(){
+    mpd=$(mpc current)
+    echo -e "♫  $mpd"
+}
+
+ram(){
+    ram=$(free -h | awk '/Mem/ { print $7 }')
+    echo -e "  $ram"
+}
+
+vol(){
+    vol=$(amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "MM" } else { print $2 }}' | head -n 1)
+    echo -e "墳  $vol"
+}
+
+wifi(){
+    wifi=$(nmcli | sed '1q' | awk '{print $4}')
+    [[ -n $wifi ]] && echo -e "直  $wifi" || echo -e "直 DISCONNECTED"
+}
+
+#bri(){
+    #bri=$(light | cut -d. -f1)
+    #echo -e "BRIGHTNESS: $bri"
+#}
+
+#bat(){
+    #bat=$(acpi | cut -d" " -f 4 | cut -d"," -f 1 )
+    #echo -e "BAT $bat"
+#}
+
+timedate(){
+    time=$(date +"%a %d, %b %Y | %I:%M")
+    echo -e "  $time"
+}
+
+layout(){
+    layout=$(setxkbmap -query | grep "layout" | awk '{print $2}')
+    echo -e "⌨  $layout"
+}
+
+SLEEP_SEC=1
+while true; do  
+    [[ -z $(mpc current) ]] && xsetroot -name "^c#fe8019^[ $(layout) ]  ^c#fabd2f^[ $(ram) ]  ^c#fb4934^[ $(vol) ]  ^c#83a598^[ $(wifi) ]  ^c#8ec07c^[ $(timedate) ] " \
+    || xsetroot -name "^c#d3869b^[ $(mpd) ]  ^c#fe8019^[ $(layout) ]  ^c#fabd2f^[ $(ram) ]  ^c#fb4934^[ $(vol) ]  ^c#83a598^[ $(wifi) ]  ^c#8ec07c^[ $(timedate) ] "
+    sleep $SLEEP_SEC
+done
