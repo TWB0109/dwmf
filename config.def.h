@@ -810,6 +810,7 @@ static const char *dmenucmd[] = {
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *killcmd[]  = { "pkill", "dwms", NULL };
 static const char *lockcmd[]  = { "slock", NULL };
+static const char *roficmd[]  = { "rofi", "-show", "drun", NULL };
 
 #if BAR_STATUSCMD_PATCH
 #if BAR_DWMBLOCKS_PATCH
@@ -841,6 +842,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Escape,     setkeymode,             {.ui = COMMANDMODE} },
 	#endif // KEYMODES_PATCH
 	{ MODKEY|ShiftMask,             XK_d,          spawn,                  {.v = dmenucmd } },
+	{ MODKEY|ControlMask,           XK_d,          spawn,                  {.v = roficmd } },
 	{ MODKEY|ShiftMask,             XK_Return,     spawn,                  {.v = termcmd } },
 	#if RIODRAW_PATCH
 	{ MODKEY|ControlMask,           XK_p,          riospawnsync,           {.v = dmenucmd } },
