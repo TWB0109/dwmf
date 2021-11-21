@@ -123,7 +123,7 @@ static char c000000[]                    = "#000000"; // placeholder value
 
 #if BAR_FLEXWINTITLE_PATCH
 #endif // BAR_FLEXWINTITLE_PATCH
-static char normfgcolor[]                = "#fbf1c7";
+static char normfgcolor[]                = "#665c54";
 static char normbgcolor[]                = "#32302f";
 static char normbordercolor[]            = "#32302f";
 static char normfloatcolor[]             = "#32302f";
@@ -143,7 +143,7 @@ static char titleselbgcolor[]            = "#b8bb26";
 static char titleselbordercolor[]        = "#b8bb26";
 static char titleselfloatcolor[]         = "#d3869b";
 
-static char tagsnormfgcolor[]            = "#fbf1c7";
+static char tagsnormfgcolor[]            = "#665c54";
 static char tagsnormbgcolor[]            = "#32302f";
 static char tagsnormbordercolor[]        = "#444444";
 static char tagsnormfloatcolor[]         = "#8ec07c";
