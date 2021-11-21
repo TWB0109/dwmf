@@ -153,8 +153,8 @@ static char tagsselbgcolor[]             = "#32302f";
 static char tagsselbordercolor[]         = "#32302f";
 static char tagsselfloatcolor[]          = "#b8bb26";
 
-static char hidnormfgcolor[]             = "#005577";
-static char hidselfgcolor[]              = "#227799";
+static char hidnormfgcolor[]             = "#878A1C";
+static char hidselfgcolor[]              = "#b8bb26";
 static char hidnormbgcolor[]             = "#222222";
 static char hidselbgcolor[]              = "#222222";
 
