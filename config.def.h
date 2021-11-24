@@ -136,12 +136,12 @@ static char selfloatcolor[]              = "#8ec07c";
 static char titlenormfgcolor[]           = "#bbbbbb";
 static char titlenormbgcolor[]           = "#32302f";
 static char titlenormbordercolor[]       = "#444444";
-static char titlenormfloatcolor[]        = "#db8fd9";
+static char titlenormfloatcolor[]        = "#8ec07c";
 
 static char titleselfgcolor[]            = "#32302f";
 static char titleselbgcolor[]            = "#b8bb26";
 static char titleselbordercolor[]        = "#b8bb26";
-static char titleselfloatcolor[]         = "#d3869b";
+static char titleselfloatcolor[]         = "#8ec07c";
 
 static char tagsnormfgcolor[]            = "#665c54";
 static char tagsnormbgcolor[]            = "#32302f";
@@ -161,7 +161,7 @@ static char hidselbgcolor[]              = "#222222";
 static char urgfgcolor[]                 = "#fbf1c7";
 static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";
-static char urgfloatcolor[]              = "#db8fd9";
+static char urgfloatcolor[]              = "#8ec07c";
 
 #if BAR_FLEXWINTITLE_PATCH
 static char normTTBbgcolor[]             = "#330000";
