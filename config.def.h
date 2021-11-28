@@ -870,7 +870,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Down,       focusdir,               {.i = 3 } }, // down
 	#endif // FOCUSDIR_PATCH
 	#if SWAPFOCUS_PATCH && PERTAG_PATCH
-	{ MODKEY,                       XK_s,          swapfocus,              {.i = -1 } },
+	{ Mod1Mask,                     XK_Tab,          swapfocus,              {.i = -1 } },
 	#endif // SWAPFOCUS_PATCH
 	#if SWITCHCOL_PATCH
 	{ MODKEY,                       XK_v,          switchcol,              {0} },
