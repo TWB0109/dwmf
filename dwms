@@ -5,7 +5,8 @@
 
 setxkbmap -layout us
 setxkbmap -option caps:swapescape
-nitrogen --restore
+sh ~/.sxw
+#nitrogen --restore
 #hsetroot -solid \#D3869B
 xrdb ~/.Xresources
 #$HOME/.scripts/natscroll
@@ -19,7 +20,7 @@ xrdb ~/.Xresources
 [[ -z $(pgrep xidlehook) ]] && xidlehook --not-when-fullscreen --not-when-audio --timer 600 'slock' '' &
 [[ -z $(pgrep emacs) ]] && emacs --daemon &
 [[ -z $(pgrep mpd) ]] && mpd &
-#spotifyd
+[[ $(date "+%H") -ge 18 ]] && redshift -PO 4000 || redshift -x &
 
 # Start gnome-keyring for ssh keys
 eval $(gnome-keyring-daemon --start)
