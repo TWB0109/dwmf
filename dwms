@@ -9,6 +9,7 @@ sh ~/.sxw
 #nitrogen --restore
 #hsetroot -solid \#D3869B
 xrdb ~/.Xresources
+xrandr --output HDMI-A-0 --mode 1920x1080 --rate 74.97
 #$HOME/.scripts/natscroll
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 [[ -z $(pgrep dbar) ]] && dbar &
