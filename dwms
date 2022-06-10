@@ -2,9 +2,10 @@
 
 # Enable qt5ct
 [[ "$DESKTOP_SESSION" != "plasma" ]] && export QT_QPA_PLATFORMTHEME="qt5ct"
+# nothing to commit, working tree clean
 
 setxkbmap -layout us
-setxkbmap -option caps:swapescape
+#setxkbmap -option caps:swapescape
 sh ~/.sxw
 #nitrogen --restore
 #hsetroot -solid \#D3869B
@@ -12,6 +13,7 @@ xrdb ~/.Xresources
 xrandr --output HDMI-A-0 --mode 1920x1080 --rate 74.97
 #$HOME/.scripts/natscroll
 #/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#[[ -z $(pgrep emacs) ]] && emacs --daemon &
 [[ -z $(pgrep dbar) ]] && dbar &
 [[ -z $(pgrep picom) ]] && picom --experimental-backends &
 [[ -z $(pgrep sxhkd) ]] && sxhkd &
@@ -19,7 +21,6 @@ xrandr --output HDMI-A-0 --mode 1920x1080 --rate 74.97
 [[ -z $(pgrep xfce4-power-manager) ]] && xfce4-power-manager --daemon &
 [[ -z $(pgrep dunst) ]] && dunst &
 [[ -z $(pgrep xidlehook) ]] && xidlehook --not-when-fullscreen --not-when-audio --timer 600 'slock' '' &
-[[ -z $(pgrep emacs) ]] && emacs --daemon &
 [[ -z $(pgrep mpd) ]] && mpd &
 [[ $(date "+%H") -ge 18 ]] && redshift -PO 4000 || redshift -x &
 
