@@ -17,11 +17,10 @@ xrandr --output HDMI-A-0 --mode 1920x1080 --rate 74.97
 [[ -z $(pgrep dbar) ]] && dbar &
 [[ -z $(pgrep picom) ]] && picom --experimental-backends &
 [[ -z $(pgrep sxhkd) ]] && sxhkd &
-[[ -z $(pgrep xsettingsd) ]] && xsettingsd -c ~/.config/xsettingsd/xsettingsd-dwm.conf &
+# [[ -z $(pgrep xsettingsd) ]] && xsettingsd -c ~/.config/xsettingsd/xsettingsd-dwm.conf &
 [[ -z $(pgrep xfce4-power-manager) ]] && xfce4-power-manager --daemon &
 [[ -z $(pgrep dunst) ]] && dunst &
 [[ -z $(pgrep xidlehook) ]] && xidlehook --not-when-fullscreen --not-when-audio --timer 600 'slock' '' &
-[[ -z $(pgrep mpd) ]] && mpd &
 [[ $(date "+%H") -ge 18 ]] && redshift -PO 4000 || redshift -x &
 
 # Start gnome-keyring for ssh keys
@@ -32,6 +31,8 @@ export SSH_AUTH_SOCK
 if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
     eval 'dbus-launch --sh-syntax --exit-with-session'
 fi
+
+[[ -z $(pgrep darkman) ]] && darkman run &
 
 while true; do
     dwm 2> ~/.dwm.log
